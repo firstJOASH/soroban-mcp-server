@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "soroban": {
+      "command": "npx",
+      "args": ["soroban-mcp-server"],
+      "env": {
+        "STELLAR_NETWORK": "testnet",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}

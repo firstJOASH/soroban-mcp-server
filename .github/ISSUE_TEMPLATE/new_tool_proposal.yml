@@ -1,0 +1,65 @@
+name: New Tool Proposal
+description: Propose adding a new MCP tool to the server
+labels: [new-tool, enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project is designed to grow with the Soroban ecosystem.
+        Use this template to propose a new tool. Well-scoped proposals
+        make great `good-first-issue` candidates.
+
+  - type: input
+    id: tool_name
+    attributes:
+      label: Proposed tool name
+      placeholder: e.g. bump_contract_ttl
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What does this tool do?
+      description: One or two sentences. What agent task does it enable?
+    validations:
+      required: true
+
+  - type: textarea
+    id: input_schema
+    attributes:
+      label: Suggested input schema
+      description: List the parameters the tool should accept (name, type, description).
+      placeholder: |
+        - contract_id: string — the contract to bump
+        - ledgers_to_add: number — how many ledgers to extend the TTL by
+        - network: "testnet" | "futurenet"
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Suggested output
+      description: What structured data should the tool return?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: implementation
+    attributes:
+      label: Implementation approach
+      options:
+        - Direct RPC call (fast, no CLI dependency)
+        - Stellar CLI wrapper
+        - Both / unsure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: willing_to_implement
+    attributes:
+      label: Are you willing to implement this?
+      options:
+        - label: Yes, I'd like to submit a PR for this
+        - label: No, just proposing the idea
